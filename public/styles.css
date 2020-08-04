@@ -1,0 +1,39 @@
+h1 {
+  text-align: center; 
+}
+
+textarea {
+   display: block;
+   height: 150px;
+   width: 80%;
+   margin: 0 auto;
+}
+
+#inputWrapper {
+   padding: 5px;
+   width: 500px;
+   margin: 0 auto;
+}
+
+input {
+   width: 50px;
+}
+
+p {
+   width: 100%;
+}
+
+#resetGame {
+   padding: 15px;
+   border: none;
+   border-radius: 5px;
+   background: light grey;
+   display: block;
+   width: 150px;
+   margin: 10px auto;
+   
+}
+
+h3 {
+   text-align: center;
+}
