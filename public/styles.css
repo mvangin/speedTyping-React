@@ -4,15 +4,26 @@ h1 {
 
 textarea {
    display: block;
-   height: 150px;
-   width: 80%;
+   height: 100px;
+   font-size: 15px;
+   width: 50%;
    margin: 0 auto;
 }
 
-#inputWrapper {
-   padding: 5px;
-   width: 500px;
+#randomText {
+   padding: 15px;
+   height: 150px;
+   width: 50%;
    margin: 0 auto;
+   border: 2px solid grey;
+}
+
+
+#inputWrapper {
+   padding-top: 20px;
+   width: 50%;
+   margin: 0 auto;
+   text-align: center;
 }
 
 input {
@@ -36,4 +47,13 @@ p {
 
 h3 {
    text-align: center;
+   padding: 15px;
+}
+
+#highlight {
+   color: red;
+}
+
+#nohighlight {
+   color: blue;
 }
