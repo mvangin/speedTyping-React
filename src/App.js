@@ -5,40 +5,21 @@ import TypeCorrect from "./TypeCorrect"
 
 function App() {
   const {
-    handleInput,
-    handleTimerSubmit,
-    StartNewGame,
-    handleInputTimer,
-    userText,
-    timer,
-    textDisable,
-    newGameDisable,
-    timerInputDisable,
-    inputTimer,
-    textArea,
-    numWords,
+      handleInput,
+      handleTimerSubmit,
+      StartNewGame,
+      handleInputTimer,
+      randomText,
+      userText,
+      timer,
+      textDisable,
+      newGameDisable,
+      timerInputDisable,
+      inputTimer,
+      textArea,
+      wpm,
+      correctedWpm,
   } = GameLogic();
-
-  const [currentWord, setCurrentWord] = useState("")
-  const [index, setIndex] = useState(0)
-
-  let randomText = "hi dude how are you"
-
-
-
-
-
-  function handleKeyDown(e) {
-    console.log(String.fromCharCode(e.keyCode))
-
-    if (String.fromCharCode(e.keyCode) === " ") {
-      setCurrentWord(randomText[index + 1])
-      setIndex(prevIndex => prevIndex + 1)
-      console.log(currentWord)
-    }
-  }
-
-
 
   return (
     <>
@@ -47,24 +28,29 @@ function App() {
         </h1>
 
       <div id="randomText">
-        <TypeCorrect randomText={randomText} userText={userText} />
+        <TypeCorrect randomText={randomText} userText={userText}  />
       </div>
 
-      <textarea ref={textArea} disabled={textDisable} value={userText} onChange={handleInput} onKeyDown={handleKeyDown} placeholder="Start typing to begin" />
+
+      <textarea ref={textArea} disabled={textDisable} value={userText} onChange={handleInput} placeholder="Start typing to begin" />
       <div id="inputWrapper">
         Number of seconds: <input type="number" min="1" disabled={timerInputDisable} value={inputTimer} onChange={handleInputTimer} placeholder="10" />
         <button onClick={handleTimerSubmit} disabled={timerInputDisable} > submit </button>
       </div>
 
-      <h3>
+      <h2>
         {`Timer: ${timer} seconds`}
-      </h3>
+      </h2>
 
       <button id="StartNewGame" disabled={newGameDisable} onClick={StartNewGame}> Start New Game </button>
 
-      <div>
-        {`Words typed: ${numWords}`}
-      </div>
+      <h3>
+        {`Words Per Minute: ${wpm}`}
+      </h3>
+
+      <h3>
+        {`Corrected Words Per Minute: ${correctedWpm}`}
+      </h3>
 
     </>
   )
