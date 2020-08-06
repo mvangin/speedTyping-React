@@ -7,10 +7,10 @@ function GameLogic() {
     const [textDisable, setTextDisable] = useState(false)
     const [newGameDisable, setNewGameDisable] = useState(false)
     const [timerInputDisable, setTimerInputDisable] = useState(false)
-    const [inputTimer, setInputTimer] = useState("10")
+    const [inputTimer, setInputTimer] = useState(10)
     const textArea = useRef(null)
     const [wpm, setWpm] = useState("")
-    const [correctedWpm, setCorrectedWpm] = useState("")
+    const [percentCorrect, setPercentCorrect] = useState("")
     const [endGame, setEndGame] = useState(false)
 
     let defaultText =
@@ -22,23 +22,21 @@ function GameLogic() {
     function calculateWpm() {
         let correctNumTally = 0;
 
-        let filteredRandomText = randomText.trim().split(" ").filter(word => word !== "")
-        let wordArray = userText.trim().split(" ")
+        let userTextArray = userText.split("")
 
-        let filteredWords = wordArray.filter(word => word !== "")
 
-        filteredWords.forEach((item, index) => {
-            if (index < filteredRandomText.length) {
-                if (item === filteredRandomText[index]) {
+        userTextArray.forEach((item, index) => {
+            if (index < randomText.length) {
+                if (item === randomText[index]) {
                     correctNumTally += 1;
                 }
-            } 
+            }
         })
 
-        let wpm = Math.round(filteredWords.length / (inputTimer / 60))
-        let wpmCorrected = Math.round((correctNumTally / (inputTimer / 60)))
-        console.log(wpm)
-        return ({ wpm: wpm, wpmCorrected: wpmCorrected })
+        let wpm = Math.round((userTextArray.length / 5) / ((inputTimer - timer) / 60))
+        let accuracy = Math.round((correctNumTally) / userTextArray.length * 100)
+
+        return ({ wpm: wpm, accuracy: accuracy })
 
     }
 
@@ -50,13 +48,10 @@ function GameLogic() {
             setWpm("")
         }
         setUserText(e.target.value);
-        console.log(e.target.value)
-        if (e.target.value[e.target.value.length-1] === " ") {
+        if ((inputTimer - timer) > 1) {
             let { wpm } = calculateWpm();
             setWpm(wpm)
         }
-
-
     }
 
 
@@ -97,8 +92,8 @@ function GameLogic() {
                 setEndGame(false)
             }
 
-            let {wpm, wpmCorrected } = calculateWpm();
-            setCorrectedWpm(wpmCorrected)
+            let { wpm, accuracy } = calculateWpm();
+            setPercentCorrect(accuracy)
             setWpm(wpm)
 
         }
@@ -112,6 +107,10 @@ function GameLogic() {
         setTextDisable(false)
         setTimer(inputTimer)
         setUserText("")
+        setPercentCorrect("")
+        setWpm("")
+
+
     }
 
     return ({
@@ -129,7 +128,7 @@ function GameLogic() {
         inputTimer,
         textArea,
         wpm,
-        correctedWpm,
+        percentCorrect,
         endGame,
     })
 }

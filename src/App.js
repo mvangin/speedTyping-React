@@ -18,7 +18,7 @@ function App() {
     inputTimer,
     textArea,
     wpm,
-    correctedWpm,
+    percentCorrect
   } = GameLogic();
 
   return (
@@ -46,7 +46,7 @@ function App() {
           </h3>
 
           <h3>
-            {`Corrected Words Per Minute: \n ${correctedWpm}`}
+            {`Accuracy (percent): \n ${percentCorrect}`}
           </h3>
 
         </div>
