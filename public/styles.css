@@ -2,32 +2,47 @@ body{
    background: black;
 }
 h1 {
-   color: grey;
+   margin-top: 0px;
+   background-color: red;
+   padding: 15px;
+  color: white;
   text-align: center; 
 }
 
 textarea {
+   border: 2px solid grey;
+   margin: 0px;
    background: white;
    font-family: serif;
    font-size: 20px;
    display: block;
    height: 50px;
-   width: 50%;
-   margin: 0 auto;
    padding: 15px;
+   width: 95%;
+}
+
+#textWrapper{
+   width: 700px;
+}
+
+#contentWrapper {
+   display: flex;
+   justify-content: center;
 }
 
 #randomText {
+   margin: 0px;
    background: white;
    font-family: serif;
    font-size: 20px;
    display: block;
    padding: 15px;
-   height: 60px;
-   width: 50%;
-   margin: 0 auto;
+   height: 120px;
    border: 2px solid grey;
    overflow: auto;
+   width: 95%;
+
+
 }
 
 
@@ -49,6 +64,7 @@ p {
    width: 100%;
 }
 
+
 #StartNewGame {
    padding: 15px;
    border: none;
@@ -56,17 +72,34 @@ p {
    background: light grey;
    display: block;
    width: 150px;
-   margin: 10px auto;
+   margin: 0px auto;
    
 }
 
+
+
 h3, h2 {
    color: white;
-   text-align: center;
-   padding: 15px;
+   padding-left: 10px;
 }
 
+#timer {
+   text-align: center;
+   font-size: 30px;
+}
 
+#wpm {
+   background: rgb(92, 91, 91);
+   height: 238px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 380px;
+}
+
+#wpmText{
+   font-size: 35px;
+}
 
 #highlight {
    color: rgb(4, 104, 4);
