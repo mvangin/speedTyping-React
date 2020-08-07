@@ -54,7 +54,7 @@ function App() {
       </div>
 
       <div id="inputWrapper">
-        Number of seconds: <input type="number" min="1" disabled={timerInputDisable} value={inputTimer} onChange={handleInputTimer}/>
+        Set Timer (Seconds): <input type="number" min="1" disabled={timerInputDisable} value={inputTimer} onChange={handleInputTimer}/>
         <button onClick={handleTimerSubmit} disabled={timerInputDisable} > submit </button>
       </div>
 

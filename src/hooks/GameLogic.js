@@ -90,6 +90,8 @@ function GameLogic() {
                 setTextDisable(true)
                 setNewGameDisable(false)
                 setEndGame(false)
+
+
             }
 
             let { wpm, accuracy } = calculateWpm();
@@ -109,8 +111,7 @@ function GameLogic() {
         setUserText("")
         setPercentCorrect("")
         setWpm("")
-
-
+        textArea.current.focus()
     }
 
     return ({
