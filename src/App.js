@@ -1,7 +1,7 @@
 import React from "react"
 import GameLogic from "./hooks/GameLogic"
 import TypeCorrect from "./TypeCorrect"
-
+import './styles.css';
 
 function App() {
   const {
