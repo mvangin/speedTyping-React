@@ -1,4 +1,4 @@
-Working site is available at: https://mvangin.github.io/speedTyping-React/
+Delved into learning React.js by creating a speed typing game that displays your WPM on the fly and provides a percent correct at the end of a user defined time limit. I quickly saw how powerful front end frameworks can be! Live site is available at: https://mvangin.github.io/speedTyping-React/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
